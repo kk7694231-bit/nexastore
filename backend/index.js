@@ -10,10 +10,10 @@ import cartRoutes from "./routes/cartRoutes.js";
 import wishlistRoutes from "./routes/wishlistRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 
-connectDB();
 
 const app = express();
 
@@ -40,3 +40,12 @@ app.listen(PORT, () => {
     `Server Running On Port ${PORT}`
   );
 });
+
+mongoose.connect("mongodb://vinsupkishore:vinsupkishore@ac-cimxs3u-shard-00-00.bwcy5qr.mongodb.net:27017,ac-cimxs3u-shard-00-01.bwcy5qr.mongodb.net:27017,ac-cimxs3u-shard-00-02.bwcy5qr.mongodb.net:27017/?ssl=true&replicaSet=atlas-ni0tdb-shard-0&authSource=admin&appName=Cluster0")
+.then(()=>{
+  console.log("DB Connected");
+})
+
+.catch((err)=>{
+  console.log(err);
+})
