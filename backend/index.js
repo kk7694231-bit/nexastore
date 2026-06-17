@@ -11,7 +11,7 @@ import wishlistRoutes from "./routes/wishlistRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import mongoose from "mongoose";
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 const app = express();
 app.use(express.json());
 app.use(cors());
