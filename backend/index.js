@@ -17,6 +17,12 @@ dotenv.config();
 
 const app = express();
 
+app.listen(PORT, () => {
+  console.log(
+    `Server Running On Port ${PORT}`
+  );
+});
+
 app.use(cors());
 
 app.use(express.json());
@@ -35,11 +41,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/reviews", reviewRoutes);
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(
-    `Server Running On Port ${PORT}`
-  );
-});
+
 
 mongoose.connect("mongodb://vinsupkishore:vinsupkishore@ac-cimxs3u-shard-00-00.bwcy5qr.mongodb.net:27017,ac-cimxs3u-shard-00-01.bwcy5qr.mongodb.net:27017,ac-cimxs3u-shard-00-02.bwcy5qr.mongodb.net:27017/?ssl=true&replicaSet=atlas-ni0tdb-shard-0&authSource=admin&appName=Cluster0")
 .then(()=>{
